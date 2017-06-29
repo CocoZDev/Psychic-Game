@@ -16,7 +16,8 @@ var losses = document.getElementById("lossesCount");
 //Staring count numbers
 var guesses = 10;
 var wins = 0;
-var losses = 0;    
+var losses = 0;  
+var hasWon = false;  
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -33,7 +34,9 @@ document.onkeyup = function(event) {
 	if (userGuess === computerGuess) {
 		wins++;
 		guesses = 0;
+		hasWon = true;
 		alert ("Congratulations. You have gussed the right letter! Click Okay Button to play again.");
+
 	}
 
 	// Otherwise, number of guesses decrease by 1 as user type
@@ -42,14 +45,20 @@ document.onkeyup = function(event) {
 	
 	// //If Guess reaches 0, add 1 to losses
 	if (guesses === 0) {
-		losses++;
 		guesses = 10;
+		//has the user won if not increment losses
+		if (!hasWon) {
+			losses++;
+		}
+		//reset haswon so that for the next game it will start off as false
+		hasWon = false;
+
 	}
 
 	// Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
 	// Set the inner HTML contents of the #game div to our html string  
-	
-	document.querySelector("#answersSoFar").innerHTML = userGuess;
+
+	document.querySelector("#answersSoFar").innerHTML = document.querySelector("#answersSoFar").innerHTML + userGuess + ", ";
 	document.querySelector("#guessesLeftCount").innerHTML = guesses;
 	document.querySelector("#winsCount").innerHTML = wins;
 	document.querySelector("#lossesCount").innerHTML = losses;
