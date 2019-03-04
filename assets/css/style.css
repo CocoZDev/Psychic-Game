@@ -71,7 +71,8 @@ button {
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 15px;
-  box-shadow: 3px 3px rgb(41, 41, 41);
+  box-shadow: 3px 5px 8px rgb(41, 41, 41);
+  outline: none;
 }
 
 .pressed {
