@@ -55,16 +55,16 @@ p {
 }
 
 #intro {
-  margin: 20px 0 40px 0;
+  margin: 0 20px;
 }
 
 #message-area {
   visibility: hidden;
   background-color: #990033;
   color: #FFFFCC;
-  padding: 15px 0;
+  padding: 20px 0;
+  margin-bottom: 10px;
   font-size: 22px;
-  /* font-style: italic; */
   border-radius: 20px;
   width: 400px;
   margin-left: calc(50% - 200px);
