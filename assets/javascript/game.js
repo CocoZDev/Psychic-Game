@@ -77,26 +77,18 @@ document.onkeyup = function(event) {
 
 };
 
-
-// Reveal the correct answer when user click on a button
+//Reveal the correct answer when user click on a button
 document.querySelector("#answer-btn").addEventListener("click", function(){
 
 	var button = document.querySelector("#answer-btn");
 	var correctAnswer = "Correct Answer: " + computerGuess;
 
-	// Add class to change style
-	button.classList.add("pressed");
-	setTimeout(function(){
-		button.classList.remove("pressed");
-	}, 200);
-	
-	// Show Message
 	document.querySelector("#answer").innerHTML = correctAnswer;
 	console.log("Correct Answer: " + computerGuess);
 
 });
 
-// Reset the game to play the next round
+//Reset the game to play the next round
 function resetGame(){
 	losses = 0;
 	gueeses = 0;

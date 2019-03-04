@@ -82,7 +82,7 @@ button {
   outline: none;
 }
 
-.pressed {
+button:active {
   background-color:#6b0225;
   box-shadow: none;
 }
