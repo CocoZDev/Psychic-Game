@@ -58,7 +58,8 @@ p {
   margin: 20px 0 40px 0;
 }
 
-#message {
+#message-area {
+  visibility: hidden;
   background-color: #990033;
   color: #FFFFCC;
   padding: 15px 0;
