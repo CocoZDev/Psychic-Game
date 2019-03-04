@@ -39,7 +39,9 @@ document.onkeyup = function(event) {
 		wins++;
 		guesses = 0;
 		hasWon = true;
-		document.querySelector("#message").innerHTML = "You won!!! <br>You have gussed the right letter, <em><u>" + userGuess +"</u></em>. <br>To play again, just refresh this page.";
+
+		document.querySelector("#winning-image").innerHTML = "<img src='assets/images/winner2.png' alt='You won!' height='150px'>"
+		document.querySelector("#winning-message").innerHTML = "You won!!! <br> The correct answer is, " + userGuess +". <br> Refresh the page to play again.";
 		console.log(hasWon);
 	} 
 	// Otherwise, number of guesses decrease by 1 as user type

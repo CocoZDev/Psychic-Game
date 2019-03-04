@@ -28,7 +28,7 @@ body {
 main {
   width: 70%;
   margin-left: 15%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(40, 0, 0, 0.6);
   position: relative; /* To show background color*/
 }
@@ -59,9 +59,14 @@ p {
 }
 
 #message {
-  background: rgb(1, 184, 1);
+  background-color: #990033;
+  color: #FFFFCC;
+  padding: 15px 0;
   font-size: 22px;
-  font-style: italic;
+  /* font-style: italic; */
+  border-radius: 20px;
+  width: 400px;
+  margin-left: calc(50% - 200px);
 }
 
 button {
