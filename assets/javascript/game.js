@@ -40,10 +40,12 @@ document.onkeyup = function(event) {
 		guesses = 0;
 		hasWon = true;
 
+		gameHistoryTracking();
+
 		document.querySelector("#message-area").style.visibility = "visible";
 		document.querySelector("#winning-image").innerHTML = "<img src='assets/images/winner2.png' alt='You won!' height='150px'>"
 		document.querySelector("#winning-message").innerHTML = "You won!!! <br> The correct answer is, " + userGuess +". <br> Refresh the page to play again.";
-		
+
 		console.log(hasWon);
 	} 
 	// Otherwise, number of guesses decrease by 1 as user type
@@ -54,14 +56,13 @@ document.onkeyup = function(event) {
 	
 	// //If Guess reaches 0, add 1 to losses
 	if (guesses === 0) {
-		guesses = 10;
+		guesses = 5;
 		//has the user won if not increment losses
-		if (!hasWon) {
+		if (hasWon === false) {
 			losses++;
 		}
 		//reset haswon so that for the next game it will start off as false
-		hasWon = false;
-
+		// hasWon = false;
 	}
 
 	// Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
@@ -73,13 +74,14 @@ document.onkeyup = function(event) {
 		document.querySelector("#winsCount").innerHTML = wins;
 		document.querySelector("#lossesCount").innerHTML = losses;
 	};	
+
 };
 
 
 // Reveal the correct answer when user click on a button
-document.querySelector("button").addEventListener("click", function(){
+document.querySelector("#answer-btn").addEventListener("click", function(){
 
-	var button = document.querySelector("button");
+	var button = document.querySelector("#answer-btn");
 	var correctAnswer = "Correct Answer: " + computerGuess;
 
 	// Add class to change style
@@ -94,5 +96,13 @@ document.querySelector("button").addEventListener("click", function(){
 
 });
 
+// Reset the game to play the next round
+function resetGame(){
+	losses = 0;
+	gueeses = 0;
+	document.querySelector("#message-area").style.visibility = "invisible";
+}
+
+document.querySelector("#reset-btn").addEventListener("click", resetGame);
 
 // Bonus Event: Add a countdown timer

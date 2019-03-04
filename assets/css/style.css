@@ -60,7 +60,7 @@ p {
 
 #message-area {
   visibility: hidden;
-  background-color: #990033;
+  background-color: #790129;
   color: #FFFFCC;
   padding: 20px 0;
   margin-bottom: 10px;
@@ -73,6 +73,7 @@ p {
 button {
   margin: 20px 0;
   background-color: #990033;
+  color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 25px;
