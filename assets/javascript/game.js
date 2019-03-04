@@ -76,16 +76,16 @@ document.onkeyup = function(event) {
 document.querySelector("button").addEventListener("click", function(){
 
 	var button = document.querySelector("button");
-	var correctAnswer = "<p>Correct Answer: " + computerGuess + "</p>";
+	var correctAnswer = "Correct Answer: " + computerGuess;
 
 	// Add class to change style
 	button.classList.add("pressed");
 	setTimeout(function(){
 		button.classList.remove("pressed");
-	}, 100);
+	}, 200);
 	
 	// Show Message
-	button.outerHTML += correctAnswer;
+	document.querySelector("#answer").innerHTML = correctAnswer;
 	console.log("Correct Answer: " + computerGuess);
 
 });

@@ -65,16 +65,16 @@ p {
 }
 
 button {
-  margin-top: 20px;
-  background-color: black;
+  margin: 20px 0;
+  background-color: #990033;
   border: none;
   padding: 10px 20px;
   border-radius: 25px;
-  box-shadow: 5px 5px rgb(75, 74, 74);
   font-size: 15px;
+  box-shadow: 3px 3px rgb(41, 41, 41);
 }
 
 .pressed {
-  background-color:rgb(75, 74, 74);
+  background-color:#6b0225;
   box-shadow: none;
 }
