@@ -30,19 +30,21 @@ document.onkeyup = function(event) {
 	// Determines which key was pressed.
 	var userGuess = event.key;
 
-	gameHistoryTracking();
+	console.log(hasWon);	
 
 	// This logic determines the outcome of the game (win/loss), and increments the appropriate number
 	// Compare user's guesses with the right answer
 	// If win, the # of gueeses is reset to 0, and add 1 to wins
-	if (userGuess === computerGuess) {
+	if (userGuess === computerGuess && hasWon === false) {
 		wins++;
 		guesses = 0;
 		hasWon = true;
 		document.querySelector("#message").innerHTML = "You won!!! <br>You have gussed the right letter, <em><u>" + userGuess +"</u></em>. <br>To play again, just refresh this page.";
+		console.log(hasWon);
 	} 
 	// Otherwise, number of guesses decrease by 1 as user type
 	else {
+		gameHistoryTracking();
 		guesses--;
 	}
 	
@@ -71,9 +73,22 @@ document.onkeyup = function(event) {
 
 
 // Reveal the correct answer when user click on a button
-document.querySelector("button").click(function(){
-	document.querySelector("#correctAnswer").innerHTML = "Correct Answer: " + computerGuess;
+document.querySelector("button").addEventListener("click", function(){
+
+	var button = document.querySelector("button");
+	var correctAnswer = "<p>Correct Answer: " + computerGuess + "</p>";
+
+	// Add class to change style
+	button.classList.add("pressed");
+	setTimeout(function(){
+		button.classList.remove("pressed");
+	}, 100);
+	
+	// Show Message
+	button.outerHTML += correctAnswer;
 	console.log("Correct Answer: " + computerGuess);
-})
+
+});
+
 
 // Bonus Event: Add a countdown timer

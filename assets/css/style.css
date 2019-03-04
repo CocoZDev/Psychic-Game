@@ -55,11 +55,26 @@ p {
 }
 
 #intro {
-  margin: 15px 0 50px 0;
+  margin: 20px 0 40px 0;
 }
 
 #message {
   background: rgb(1, 184, 1);
   font-size: 22px;
   font-style: italic;
+}
+
+button {
+  margin-top: 20px;
+  background-color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 5px 5px rgb(75, 74, 74);
+  font-size: 15px;
+}
+
+.pressed {
+  background-color:rgb(75, 74, 74);
+  box-shadow: none;
 }
