@@ -33,6 +33,14 @@ main {
   position: relative; /* To show background color*/
 }
 
+/* For mobile devices */
+@media (max-width: 768px) {
+  main {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 h1 {
   font-size: 50px;
   margin-top: 50px;
